@@ -1,118 +1,79 @@
-
 <!DOCTYPE html>
 <html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Animated Cartoon Fire</title>
+<title>Cartoon Night Scene</title>
 <style>
-body {
-  margin: 0;
-  background: #07152d;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-}
-.scene {
-  height: 100vh;
-  min-height: 500px;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(#07152d 40%, #274766 60%, #211c25);
-}
-.moon {
-  position: absolute;
-  top: 8%;
-  left: 12%;
-  width: 55px;
-  height: 55px;
-  border-radius: 50%;
-  background: #d9e8ff;
-  box-shadow: 0 0 35px #b8d6ff;
-}
-.fire {
-  position: absolute;
-  top: 30%;
-  left: 50%;
-  width: 220px;
-  height: 240px;
-  transform: translateX(-50%);
-}
-.flame {
-  position: absolute;
-  bottom: 0;
-  width: 65px;
-  height: 180px;
-  border-radius: 50% 50% 25% 25%;
-  background: linear-gradient(to top, red, #ff7800, #ffe45c);
-  animation: burn .45s infinite alternate ease-in-out;
-  transform-origin: bottom;
-}
-.flame:nth-child(1) {left: 5px; height: 140px}
-.flame:nth-child(2) {left: 55px; height: 205px; animation-delay: -.2s}
-.flame:nth-child(3) {left: 105px; height: 170px; animation-delay: -.1s}
-.flame:nth-child(4) {left: 155px; height: 130px; animation-delay: -.3s}
-@keyframes burn {
-  from {transform: scale(.85) rotate(-5deg); filter: brightness(.9)}
-  to {transform: scale(1.1) rotate(5deg); filter: brightness(1.3)}
-}
-.logs {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 35px;
-  background: repeating-linear-gradient(0deg,#4b2c1d 0 10px,#80502c 11px 18px);
-}
-.people {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: end;
-}
-.person {width: 20%; height: 200px; position: relative}
-.head {
-  width: 48px; height: 52px;
-  border-radius: 50%; background: #10131c;
-  margin: 0 auto;
-}
-.body {
-  height: 120px; width: 90%;
-  margin: -2px auto 0; border-radius: 30px 30px 0 0;
-  background: #202b3d;
-}
-.person:nth-child(2) .body {background:#555866}
-.person:nth-child(3) .body {background:#183a70}
-.sparks {
-  position: absolute; top: 20%; left: 40%;
-  color: #ffd15c; font-size: 20px;
-  animation: rise 2s infinite linear;
-}
-@keyframes rise {
-  from {transform: translateY(160px); opacity: 1}
-  to {transform: translateY(-130px); opacity: 0}
-}
-h3 {position:absolute;top:8px;width:100%;font-size:16px}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;overflow:hidden;font-family:Arial,sans-serif;background:#081327}
+.scene{position:relative;width:100%;height:100svh;min-height:520px;overflow:hidden;background:linear-gradient(#071126 0%,#101f3d 39%,#293b57 60%,#31242b 100%);isolation:isolate}
+.moon{position:absolute;top:7%;left:10%;width:clamp(38px,6vw,66px);aspect-ratio:1;border-radius:50%;background:#e2edff;box-shadow:0 0 30px #b6d6ff88}
+.stars{position:absolute;inset:0;opacity:.65;background-image:radial-gradient(#eaf2ff 1px,transparent 1.6px),radial-gradient(#fff 1px,transparent 1.6px);background-size:79px 71px,131px 109px;background-position:13px 15px,54px 39px}
+.hills{position:absolute;left:-5%;right:-5%;top:43%;height:22%;background:#0b1728;clip-path:polygon(0 55%,8% 30%,16% 49%,25% 15%,35% 48%,45% 25%,56% 50%,65% 17%,74% 47%,86% 21%,100% 48%,100% 100%,0 100%)}
+.water{position:absolute;left:0;right:0;top:54%;height:13%;opacity:.6;background:linear-gradient(#243c56,#41536a,#2c3448)}
+.water:after{content:"";position:absolute;inset:10% 0;background:repeating-linear-gradient(0deg,transparent 0 13px,#c5d5e333 14px 15px,transparent 16px 25px)}
+.ground{position:absolute;left:-8%;right:-8%;bottom:-9%;height:44%;background:radial-gradient(ellipse at 50% 0%,#59413a 0%,#30272c 53%,#111827 100%);border-radius:50% 50% 0 0}
+.glow{position:absolute;z-index:1;left:50%;top:39%;width:min(80vw,650px);height:40%;transform:translateX(-50%);background:radial-gradient(ellipse,#ff7b163d 0%,#ff5a0020 38%,transparent 72%);animation:glow 1.4s ease-in-out infinite alternate}
+@keyframes glow{to{opacity:.55;transform:translateX(-50%) scale(1.08)}}
+.pyre{position:absolute;z-index:3;left:50%;top:31%;width:min(48vw,400px);height:43%;transform:translateX(-50%)}
+.logs{position:absolute;bottom:9%;left:4%;right:4%;height:26%;border-radius:9px;background:repeating-linear-gradient(0deg,#3b2118 0 9px,#80502d 10px 17px,#4d2b1d 18px 23px);border:2px solid #2b1a17;box-shadow:0 8px 15px #0008;transform:perspective(170px) rotateX(10deg)}
+.logs:before,.logs:after{content:"";position:absolute;left:7%;right:7%;height:13px;border-radius:9px;background:linear-gradient(#98603a,#49291c);border:1px solid #301c15;transform:rotate(8deg);top:27%}
+.logs:after{transform:rotate(-8deg);top:58%}
+.flames{position:absolute;left:9%;right:9%;bottom:29%;height:68%;filter:drop-shadow(0 0 15px #ff6500)}
+.flame{position:absolute;bottom:0;width:23%;height:75%;border-radius:55% 45% 48% 52%/75% 75% 25% 25%;transform-origin:50% 100%;background:linear-gradient(to top,#e91e00 0%,#ff6500 34%,#ffb51c 61%,#ffe978 79%,#fff2b3 87%,transparent 100%);animation:flicker .52s ease-in-out infinite alternate}
+.flame:before{content:"";position:absolute;left:26%;right:26%;top:35%;bottom:0;border-radius:50% 50% 42% 42%;background:linear-gradient(to top,#ffb900,#fff0a0,transparent)}
+.flame:nth-child(1){left:1%;height:62%;animation-delay:-.21s}
+.flame:nth-child(2){left:18%;height:88%;width:25%;animation-delay:-.08s}
+.flame:nth-child(3){left:39%;height:72%;width:26%;animation-delay:-.34s}
+.flame:nth-child(4){left:59%;height:100%;width:25%;animation-delay:-.16s}
+.flame:nth-child(5){left:79%;height:64%;animation-delay:-.4s}
+@keyframes flicker{0%{transform:scaleX(.83) scaleY(.9) rotate(-5deg);filter:brightness(.9)}48%{transform:scaleX(1.12) scaleY(1.09) rotate(4deg);filter:brightness(1.22)}100%{transform:scaleX(.95) scaleY(.98) rotate(-2deg);filter:brightness(1)}}
+.smoke{position:absolute;z-index:2;left:39%;top:19%;width:22%;height:24%;opacity:.18;background:radial-gradient(ellipse,#aab5c6 0%,#8993a4 24%,transparent 70%);filter:blur(15px);animation:smoke 5s ease-in-out infinite alternate}
+@keyframes smoke{to{transform:translate(15px,-22px) scale(1.25);opacity:.29}}
+.sparks{position:absolute;z-index:4;left:22%;right:20%;top:18%;height:47%;pointer-events:none}
+.spark{position:absolute;bottom:0;width:4px;height:7px;border-radius:50%;background:#ffdc79;box-shadow:0 0 8px #ff7a00;opacity:0;animation:rise var(--dur,2.4s) linear infinite;animation-delay:var(--delay,0s)}
+@keyframes rise{0%{transform:translate(0,110px) scale(.4);opacity:0}15%{opacity:1}75%{opacity:.8}100%{transform:translate(var(--drift,20px),-140px) scale(.15);opacity:0}}
+.people{position:absolute;z-index:5;bottom:0;left:0;right:0;height:32%;display:flex;align-items:flex-end;justify-content:space-evenly;padding:0 1%}
+.person{position:relative;width:21%;height:100%;max-width:190px}
+.head{position:absolute;left:32%;top:8%;width:37%;height:29%;border-radius:48% 48% 45% 45%;background:linear-gradient(90deg,#090d16,#1a1c25 65%,#080b12);box-shadow:inset -5px -2px #25232a}
+.neck{position:absolute;top:32%;left:43%;width:18%;height:10%;background:#11131b}
+.body{position:absolute;left:9%;top:39%;width:82%;height:53%;border-radius:45% 45% 7% 7%;background:var(--shirt);clip-path:polygon(27% 0,73% 0,100% 22%,91% 100%,9% 100%,0 22%);filter:drop-shadow(0 0 3px #0008)}
+.arm{position:absolute;top:47%;left:0;width:24%;height:37%;border-radius:20px;background:var(--shirt);transform:rotate(12deg)}
+.arm.right{left:auto;right:0;transform:rotate(-12deg)}
+.legs{position:absolute;bottom:0;left:25%;width:22%;height:24%;background:#0b101a;border-radius:12px 12px 0 0;transform:skew(-8deg)}
+.legs:after{content:"";position:absolute;left:115%;top:0;width:100%;height:100%;background:#0b101a;border-radius:12px 12px 0 0;transform:skew(16deg)}
+.caption{position:absolute;z-index:8;top:13px;left:0;right:0;text-align:center;color:#f5f5fa;text-shadow:0 2px 8px #000;font-weight:bold;font-size:clamp(13px,2.2vw,19px)}
+.caption small{display:block;margin-top:5px;font-size:11px;font-weight:normal;opacity:.8}
+@media(max-width:600px){.scene{min-height:500px}.pyre{top:35%;width:76vw;height:37%}.people{height:30%}.person{width:24%}.ground{height:39%}.water{top:55%}.sparks{left:15%;right:15%;top:20%;height:43%}}
+@media(prefers-reduced-motion:reduce){.flame,.spark,.smoke,.glow{animation-duration:3s}}
 </style>
 </head>
 <body>
-<div class="scene">
-  <div class="moon"></div>
-  <h3>Cartoon Night Scene</h3>
-  <div class="fire">
-    <div class="flame"></div><div class="flame"></div>
-    <div class="flame"></div><div class="flame"></div>
-    <div class="logs"></div>
-  </div>
-  <div class="sparks">✦</div>
-  <div class="people">
-    <div class="person"><div class="head"></div><div class="body"></div></div>
-    <div class="person"><div class="head"></div><div class="body"></div></div>
-    <div class="person"><div class="head"></div><div class="body"></div></div>
-    <div class="person"><div class="head"></div><div class="body"></div></div>
-  </div>
+<main class="scene" aria-label="Cartoon night scene with animated fire and people seen from behind">
+<div class="stars"></div><div class="moon"></div><div class="hills"></div><div class="water"></div><div class="ground"></div><div class="glow"></div><div class="smoke"></div>
+<section class="pyre" aria-label="Animated flames and logs">
+<div class="flames"><i class="flame"></i><i class="flame"></i><i class="flame"></i><i class="flame"></i><i class="flame"></i></div><div class="logs"></div>
+</section>
+<div class="sparks" id="sparks"></div>
+<div class="people">
+<div class="person" style="--shirt:#171b25"><div class="head"></div><div class="neck"></div><div class="body"></div><div class="arm"></div><div class="arm right"></div><div class="legs"></div></div>
+<div class="person" style="--shirt:#464956"><div class="head"></div><div class="neck"></div><div class="body"></div><div class="arm"></div><div class="arm right"></div><div class="legs"></div></div>
+<div class="person" style="--shirt:#173b69"><div class="head"></div><div class="neck"></div><div class="body"></div><div class="arm"></div><div class="arm right"></div><div class="legs"></div></div>
+<div class="person" style="--shirt:#24212b"><div class="head"></div><div class="neck"></div><div class="body"></div><div class="arm"></div><div class="arm right"></div><div class="legs"></div></div>
 </div>
+<div class="caption">Cartoon Night Scene<small>Firelight • Floating sparks • Back view</small></div>
+</main>
+<script>
+const sparks=document.getElementById('sparks');
+for(let i=0;i<38;i++){
+ const s=document.createElement('i');s.className='spark';
+ s.style.left=(8+Math.random()*84)+'%';
+ s.style.setProperty('--dur',(1.5+Math.random()*2.6)+'s');
+ s.style.setProperty('--delay',(-Math.random()*4)+'s');
+ s.style.setProperty('--drift',(-32+Math.random()*64)+'px');
+ sparks.appendChild(s);
+}
+</script>
 </body>
 </html>
