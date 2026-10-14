@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animated Cartoon Fire</title>
+<style>
+body {
+  margin: 0;
+  background: #07152d;
+  color: white;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+.scene {
+  height: 100vh;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(#07152d 40%, #274766 60%, #211c25);
+}
+.moon {
+  position: absolute;
+  top: 8%;
+  left: 12%;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background: #d9e8ff;
+  box-shadow: 0 0 35px #b8d6ff;
+}
+.fire {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  width: 220px;
+  height: 240px;
+  transform: translateX(-50%);
+}
+.flame {
+  position: absolute;
+  bottom: 0;
+  width: 65px;
+  height: 180px;
+  border-radius: 50% 50% 25% 25%;
+  background: linear-gradient(to top, red, #ff7800, #ffe45c);
+  animation: burn .45s infinite alternate ease-in-out;
+  transform-origin: bottom;
+}
+.flame:nth-child(1) {left: 5px; height: 140px}
+.flame:nth-child(2) {left: 55px; height: 205px; animation-delay: -.2s}
+.flame:nth-child(3) {left: 105px; height: 170px; animation-delay: -.1s}
+.flame:nth-child(4) {left: 155px; height: 130px; animation-delay: -.3s}
+@keyframes burn {
+  from {transform: scale(.85) rotate(-5deg); filter: brightness(.9)}
+  to {transform: scale(1.1) rotate(5deg); filter: brightness(1.3)}
+}
+.logs {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 35px;
+  background: repeating-linear-gradient(0deg,#4b2c1d 0 10px,#80502c 11px 18px);
+}
+.people {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+}
+.person {width: 20%; height: 200px; position: relative}
+.head {
+  width: 48px; height: 52px;
+  border-radius: 50%; background: #10131c;
+  margin: 0 auto;
+}
+.body {
+  height: 120px; width: 90%;
+  margin: -2px auto 0; border-radius: 30px 30px 0 0;
+  background: #202b3d;
+}
+.person:nth-child(2) .body {background:#555866}
+.person:nth-child(3) .body {background:#183a70}
+.sparks {
+  position: absolute; top: 20%; left: 40%;
+  color: #ffd15c; font-size: 20px;
+  animation: rise 2s infinite linear;
+}
+@keyframes rise {
+  from {transform: translateY(160px); opacity: 1}
+  to {transform: translateY(-130px); opacity: 0}
+}
+h3 {position:absolute;top:8px;width:100%;font-size:16px}
+</style>
+</head>
+<body>
+<div class="scene">
+  <div class="moon"></div>
+  <h3>Cartoon Night Scene</h3>
+  <div class="fire">
+    <div class="flame"></div><div class="flame"></div>
+    <div class="flame"></div><div class="flame"></div>
+    <div class="logs"></div>
+  </div>
+  <div class="sparks">✦</div>
+  <div class="people">
+    <div class="person"><div class="head"></div><div class="body"></div></div>
+    <div class="person"><div class="head"></div><div class="body"></div></div>
+    <div class="person"><div class="head"></div><div class="body"></div></div>
+    <div class="person"><div class="head"></div><div class="body"></div></div>
+  </div>
+</div>
+</body>
+</html>
